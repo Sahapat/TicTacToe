@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class XoTable
+    class XoTable 
     {
         private bool[,] _Table = new bool[3, 3];
         public bool[,] Table
@@ -15,11 +15,10 @@ namespace TicTacToe
             {
                 return _Table;
             }
-            set
+            private set
             {
                 _Table = value;
             }
         }
-        
     }
 }
