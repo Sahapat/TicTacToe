@@ -12,11 +12,13 @@ namespace TicTacToe
 {
     public partial class Form1 : Form
     {
-        private XoTable GameTable = new XoTable(); 
+        private XoTable GameTable = new XoTable();
+        private SpriteManager path = new SpriteManager();
         private byte round = 1;
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void Block1_Click(object sender, EventArgs e)
@@ -27,6 +29,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column,round);
                 round++;
             }
+            UpdateTable(1);
             CheckWinner(1);
             CheckWinner(4);
             CheckWinner(7);
@@ -40,6 +43,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column, round);
                 round++;
             }
+            UpdateTable(2);
             CheckWinner(2);
             CheckWinner(4);
         }
@@ -52,6 +56,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column, round);
                 round++;
             }
+            UpdateTable(3);
             CheckWinner(3);
             CheckWinner(4);
             CheckWinner(8);
@@ -65,6 +70,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column, round);
                 round++;
             }
+            UpdateTable(4);
             CheckWinner(1);
             CheckWinner(5);
         }
@@ -77,6 +83,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column, round);
                 round++;
             }
+            UpdateTable(5);
             CheckWinner(2);
             CheckWinner(5);
             CheckWinner(7);
@@ -91,6 +98,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column, round);
                 round++;
             }
+            UpdateTable(6);
             CheckWinner(3);
             CheckWinner(5);
         }
@@ -103,6 +111,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column, round);
                 round++;
             }
+            UpdateTable(7);
             CheckWinner(1);
             CheckWinner(6);
             CheckWinner(8);
@@ -116,6 +125,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column, round);
                 round++;
             }
+            UpdateTable(8);
             CheckWinner(2);
             CheckWinner(6);
         }
@@ -128,6 +138,7 @@ namespace TicTacToe
                 GameTable.FillBlock(row, column, round);
                 round++;
             }
+            UpdateTable(9);
             CheckWinner(3);
             CheckWinner(6);
             CheckWinner(7);
@@ -143,8 +154,137 @@ namespace TicTacToe
                 return true;
             }
         }
-        private void UpdateTable()
+        private void UpdateTable(byte block)
         {
+            switch(block)
+            {
+                case 1:
+                    if(GameTable.Table[0,0] == GameState.X)
+                    {
+                        Block1.Text = "X";
+                    }
+                    else if(GameTable.Table[0, 0] == GameState.O)
+                    {
+                        Block1.Text = "O";
+                    }
+                    else
+                    {
+                        Block1.Text = string.Empty;
+                    }
+                    break;
+                case 2:
+                    if (GameTable.Table[0, 1] == GameState.X)
+                    {
+                        Block2.Text = "X";
+                    }
+                    else if (GameTable.Table[0, 1] == GameState.O)
+                    {
+                        Block2.Text = "O";
+                    }
+                    else
+                    {
+                        Block2.Text = string.Empty;
+                    }
+                    break;
+                case 3:
+                    if (GameTable.Table[0, 2] == GameState.X)
+                    {
+                        Block3.Text = "X";
+                    }
+                    else if (GameTable.Table[0, 2] == GameState.O)
+                    {
+                        Block3.Text = "O";
+                    }
+                    else
+                    {
+                        Block3.Text = string.Empty;
+                    }
+                    break;
+                case 4:
+                    if (GameTable.Table[1, 0] == GameState.X)
+                    {
+                        Block4.Text = "X";
+                    }
+                    else if (GameTable.Table[1, 0] == GameState.O)
+                    {
+                        Block4.Text = "O";
+                    }
+                    else
+                    {
+                        Block4.Text = string.Empty;
+                    }
+                    break;
+                case 5:
+                    if (GameTable.Table[1, 1] == GameState.X)
+                    {
+                        Block5.Text = "X";
+                    }
+                    else if (GameTable.Table[1, 1] == GameState.O)
+                    {
+                        Block5.Text = "O";
+                    }
+                    else
+                    {
+                        Block5.Text = string.Empty;
+                    }
+                    break;
+                case 6:
+                    if (GameTable.Table[1, 2] == GameState.X)
+                    {
+                        Block6.Text = "X";
+                    }
+                    else if (GameTable.Table[1, 2] == GameState.O)
+                    {
+                        Block6.Text = "O";
+                    }
+                    else
+                    {
+                        Block6.Text = string.Empty;
+                    }
+                    break;
+                case 7:
+                    if (GameTable.Table[2, 0] == GameState.X)
+                    {
+                        Block7.Text = "X";
+                    }
+                    else if (GameTable.Table[2, 0] == GameState.O)
+                    {
+                        Block7.Text = "O";
+                    }
+                    else
+                    {
+                        Block7.Text = string.Empty;
+                    }
+                    break;
+                case 8:
+                    if (GameTable.Table[2, 1] == GameState.X)
+                    {
+                        Block8.Text = "X";
+                    }
+                    else if (GameTable.Table[2, 1] == GameState.O)
+                    {
+                        Block8.Text = "O";
+                    }
+                    else
+                    {
+                        Block8.Text = string.Empty;
+                    }
+                    break;
+                case 9:
+                    if (GameTable.Table[2, 2] == GameState.X)
+                    {
+                        Block9.Text = "X";
+                    }
+                    else if (GameTable.Table[2, 2] == GameState.O)
+                    {
+                        Block9.Text = "O";
+                    }
+                    else
+                    {
+                        Block9.Text = string.Empty;
+                    }
+                    break;
+            }
         }
         private void CheckWinner(byte pattern)
         {
@@ -243,6 +383,16 @@ namespace TicTacToe
                 MessageBox.Show("O Winner");
             }
             GameTable.ClearTable();
+            round = 1;
+            Block1.Text = string.Empty;
+            Block2.Text = string.Empty;
+            Block3.Text = string.Empty;
+            Block4.Text = string.Empty;
+            Block5.Text = string.Empty;
+            Block6.Text = string.Empty;
+            Block7.Text = string.Empty;
+            Block8.Text = string.Empty;
+            Block9.Text = string.Empty;
         }
     }
 }
