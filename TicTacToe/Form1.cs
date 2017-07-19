@@ -13,7 +13,6 @@ namespace TicTacToe
     public partial class Form1 : Form
     {
         private XoTable GameTable = new XoTable();
-        private SpriteManager path = new SpriteManager();
         private byte round = 1;
         public Form1()
         {
